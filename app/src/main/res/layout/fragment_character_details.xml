@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_characters_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/character_material_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="9dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp">
+
+                    <ImageView
+                        android:id="@+id/character_details_imageview"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/character_details_title_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/circle" />
+
+                    <TextView
+                        android:id="@+id/character_details_title_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/character_details_name"
+                        android:textColor="@color/color_primary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_textview_name"
+                        app:layout_constraintStart_toEndOf="@id/character_details_imageview"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread" />
+
+                    <TextView
+                        android:id="@+id/character_details_textview_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxWidth="160dp"
+                        android:minLines="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_title_origin"
+                        app:layout_constraintStart_toEndOf="@+id/character_details_imageview"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_title_name"
+                        tools:text="Hole in the Wall Where the Men Can See it All" />
+
+                    <TextView
+                        android:id="@+id/character_details_title_origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/character_details_origin"
+                        android:textColor="@color/color_primary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_textview_origin"
+                        app:layout_constraintStart_toEndOf="@+id/character_details_imageview"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_textview_name" />
+
+                    <TextView
+                        android:id="@+id/character_details_textview_origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxWidth="160dp"
+                        android:minLines="2"
+                        android:textColor="@color/teal_700"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:typeface="serif"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_title_location"
+                        app:layout_constraintStart_toEndOf="@+id/character_details_imageview"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_title_origin"
+                        tools:text="New Improved Galactic Federation Quarters" />
+
+                    <TextView
+                        android:id="@+id/character_details_title_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/character_details_location"
+                        android:textColor="@color/color_primary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_textview_location"
+                        app:layout_constraintStart_toEndOf="@+id/character_details_imageview"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_textview_origin" />
+
+                    <TextView
+                        android:id="@+id/character_details_textview_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxWidth="160dp"
+                        android:minLines="2"
+                        android:singleLine="false"
+                        android:textColor="@color/teal_700"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/character_details_imageview"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_title_location"
+                        tools:text="New Improved Galactic Federation Quarters" />
+
+
+                    <TextView
+                        android:id="@+id/character_details_title_species"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/character_details_species"
+                        android:textColor="@color/color_primary"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/character_details_title_name"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_textview_species"
+                        app:layout_constraintStart_toStartOf="@+id/characters_details_guideline_vertical2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread" />
+
+                    <TextView
+                        android:id="@+id/character_details_textview_species"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxWidth="90dp"
+                        android:minLines="2"
+                        android:singleLine="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_title_status"
+                        app:layout_constraintStart_toStartOf="@+id/characters_details_guideline_vertical2"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_title_species"
+                        tools:text="Mythological creature" />
+
+                    <TextView
+                        android:id="@+id/character_details_title_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/character_details_status"
+                        android:textColor="@color/color_primary"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/character_details_title_origin"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_textview_status"
+                        app:layout_constraintStart_toStartOf="@+id/characters_details_guideline_vertical2"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_textview_species" />
+
+                    <TextView
+                        android:id="@+id/character_details_textview_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:minLines="2"
+                        android:singleLine="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_title_gender"
+                        app:layout_constraintStart_toStartOf="@+id/characters_details_guideline_vertical2"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_title_status"
+                        tools:text="Alive" />
+
+                    <TextView
+                        android:id="@+id/character_details_title_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/character_details_gender"
+                        android:textColor="@color/color_primary"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/character_details_title_location"
+                        app:layout_constraintBottom_toTopOf="@+id/character_details_textview_gender"
+                        app:layout_constraintStart_toStartOf="@+id/characters_details_guideline_vertical2"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_textview_status" />
+
+                    <TextView
+                        android:id="@+id/character_details_textview_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:minLines="2"
+                        android:singleLine="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/character_details_textview_location"
+                        app:layout_constraintStart_toStartOf="@+id/characters_details_guideline_vertical2"
+                        app:layout_constraintTop_toBottomOf="@+id/character_details_title_gender"
+                        tools:text="Male" />
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/characters_details_guideline_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="28dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/characters_details_guideline_vertical2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="297dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/character_details_nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/characters_details_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="9"
+                        tools:listitem="@layout/item_episodes" />
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/characters_details_progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/characters_details_error_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        tools:text="Error" />
+
+</FrameLayout>

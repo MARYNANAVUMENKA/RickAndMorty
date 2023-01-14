@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="9dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/locations_list_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/locations_list_name_title"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/locations_list_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="130dp"
+                android:minLines="3"
+                android:paddingEnd="3dp"
+                android:textColor="@color/color_primary"
+                android:textSize="13sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/locations_list_name_title"
+                app:layout_constraintStart_toEndOf="@+id/locations_list_name_title"
+                tools:text="New Improved Galactic Federation Quarters" />
+
+            <TextView
+                android:id="@+id/locations_list_type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/locations_list_type_title"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/locations_list_name_title"
+                app:layout_constraintTop_toBottomOf="@+id/locations_list_name_textview" />
+
+            <TextView
+                android:id="@+id/locations_list_type_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="130dp"
+                android:minLines="2"
+                android:paddingEnd="3dp"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/locations_list_type_title"
+                app:layout_constraintStart_toEndOf="@+id/locations_list_type_title"
+                tools:text="Non-Diegetic Alternative Reality" />
+
+            <TextView
+                android:id="@+id/locations_list_dimension_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingStart="3dp"
+                android:text="@string/locations_list_dimension_title"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/locations_list_type_title"
+                app:layout_constraintTop_toBottomOf="@+id/locations_list_type_textview" />
+
+            <TextView
+                android:id="@+id/locations_list_dimension_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="130dp"
+                android:minLines="2"
+                android:paddingEnd="3dp"
+                android:paddingBottom="5dp"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/locations_list_dimension_title"
+                app:layout_constraintStart_toEndOf="@+id/locations_list_dimension_title"
+                tools:text="Replacement Dimension" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="9dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/episodes_list_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/episodes_list_name_title"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/episodes_list_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="140dp"
+                android:minLines="3"
+                android:paddingEnd="3dp"
+                android:textColor="@color/color_primary"
+                android:textSize="13sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/episodes_list_name_title"
+                app:layout_constraintStart_toEndOf="@+id/episodes_list_name_title"
+                tools:text="Claw and Hoarder: Special Ricktim's Morty" />
+
+            <TextView
+                android:id="@+id/episodes_list_number_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/episodes_list_number_title"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/episodes_list_name_title"
+                app:layout_constraintTop_toBottomOf="@+id/episodes_list_name_textview" />
+
+            <TextView
+                android:id="@+id/episodes_list_number_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="130dp"
+                android:paddingEnd="3dp"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/episodes_list_number_title"
+                app:layout_constraintStart_toEndOf="@+id/episodes_list_number_title"
+                tools:text="S01E01" />
+
+            <TextView
+                android:id="@+id/episodes_list_data_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/episodes_list_data_title"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/episodes_list_number_title"
+                app:layout_constraintTop_toBottomOf="@+id/episodes_list_number_textview" />
+
+            <TextView
+                android:id="@+id/episodes_list_data_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="130dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="12dp"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/episodes_list_data_title"
+                app:layout_constraintStart_toEndOf="@+id/episodes_list_data_title"
+                tools:text="December 2,13" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

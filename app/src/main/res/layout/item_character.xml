@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="9dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/design_default_color_primary_variant">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/character_imageview"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bottomDivider"
+                tools:src="@drawable/circle" />
+
+            <TextView
+                android:id="@+id/character_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:minLines="2"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:singleLine="false"
+                android:textColor="@color/color_primary"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Floaty Non-Gasm Brotherhood Member Friend" />
+
+            <View
+                android:id="@+id/bottomDivider"
+                android:layout_width="0dp"
+                android:layout_height="0.9dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:background="#d9d9d9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/character_name_textview" />
+
+            <TextView
+                android:id="@+id/character_species_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:ellipsize="end"
+                android:maxWidth="120dp"
+                android:singleLine="false"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toTopOf="@+id/character_status_textview"
+                app:layout_constraintStart_toEndOf="@+id/character_imageview"
+                app:layout_constraintTop_toTopOf="@+id/character_imageview"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                tools:text="Mythological creature" />
+
+            <TextView
+                android:id="@+id/character_status_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:ellipsize="end"
+                android:maxWidth="110dp"
+                android:singleLine="false"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toTopOf="@+id/character_gender_textview"
+                app:layout_constraintStart_toEndOf="@+id/character_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/character_species_textview"
+                tools:text="Unknown" />
+
+            <TextView
+                android:id="@+id/character_gender_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="6dp"
+                android:ellipsize="end"
+                android:maxWidth="110dp"
+                android:singleLine="false"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/character_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/character_status_textview"
+                tools:text="Genderless" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
