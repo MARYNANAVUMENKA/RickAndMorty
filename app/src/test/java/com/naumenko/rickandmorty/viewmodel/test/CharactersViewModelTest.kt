@@ -4,7 +4,7 @@ import app.cash.turbine.test
 import com.naumenko.rickandmorty.base.State
 import com.naumenko.rickandmorty.domain.models.characters.LocationCharacter
 import com.naumenko.rickandmorty.domain.models.characters.OriginCharacter
-import com.naumenko.rickandmorty.presentation.characters.list.CharactersViewModel
+import com.naumenko.rickandmorty.presentation.characters.viewmodels.CharactersViewModel
 import com.naumenko.rickandmorty.presentation.characters.models.SingleCharacterListItem
 import com.naumenko.rickandmorty.presentation.mappers.toSingleCharacterListItem
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -14,7 +14,7 @@ import org.junit.Test
 
 class CharactersViewModelTest : ViewModelTest() {
 
-    private val repository = TestRickMortyRepository()
+    private val repository = TestCharactersRepository()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test

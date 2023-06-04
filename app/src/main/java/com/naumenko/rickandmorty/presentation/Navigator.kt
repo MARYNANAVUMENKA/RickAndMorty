@@ -25,5 +25,4 @@ interface Navigation {
     fun onPressedEpisodesFilter()
 
     fun goBack()
-
 }

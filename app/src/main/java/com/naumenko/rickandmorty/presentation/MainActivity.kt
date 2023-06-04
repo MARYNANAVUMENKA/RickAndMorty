@@ -9,15 +9,15 @@ import androidx.fragment.app.*
 import com.naumenko.rickandmorty.R
 import com.naumenko.rickandmorty.appComponent
 import com.naumenko.rickandmorty.databinding.ActivityMainBinding
-import com.naumenko.rickandmorty.presentation.characters.details.CharactersDetailsFragment
-import com.naumenko.rickandmorty.presentation.characters.filter.CharactersFilterBottomSheetFragment
-import com.naumenko.rickandmorty.presentation.characters.list.CharactersListFragment
-import com.naumenko.rickandmorty.presentation.episodes.details.EpisodesDetailsFragment
-import com.naumenko.rickandmorty.presentation.episodes.filter.EpisodesFilterBottomSheetFragment
-import com.naumenko.rickandmorty.presentation.episodes.list.EpisodesListFragment
-import com.naumenko.rickandmorty.presentation.locations.details.LocationsDetailsFragment
-import com.naumenko.rickandmorty.presentation.locations.filter.LocationsFilterBottomSheetFragment
-import com.naumenko.rickandmorty.presentation.locations.list.LocationsListFragment
+import com.naumenko.rickandmorty.presentation.characters.fragments.CharactersDetailsFragment
+import com.naumenko.rickandmorty.presentation.characters.fragments.CharactersFilterBottomSheetFragment
+import com.naumenko.rickandmorty.presentation.characters.fragments.CharactersListFragment
+import com.naumenko.rickandmorty.presentation.episodes.fragments.EpisodesDetailsFragment
+import com.naumenko.rickandmorty.presentation.episodes.fragments.EpisodesFilterBottomSheetFragment
+import com.naumenko.rickandmorty.presentation.episodes.fragments.EpisodesListFragment
+import com.naumenko.rickandmorty.presentation.locations.fragments.LocationsDetailsFragment
+import com.naumenko.rickandmorty.presentation.locations.fragments.LocationsFilterBottomSheetFragment
+import com.naumenko.rickandmorty.presentation.locations.fragments.LocationsListFragment
 
 class MainActivity : AppCompatActivity(), Navigation {
 

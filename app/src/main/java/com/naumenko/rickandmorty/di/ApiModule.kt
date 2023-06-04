@@ -2,7 +2,9 @@ package com.naumenko.rickandmorty.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.naumenko.rickandmorty.data.dto.api.ApiService
+import com.naumenko.rickandmorty.data.dto.api.ApiCharacters
+import com.naumenko.rickandmorty.data.dto.api.ApiEpisodes
+import com.naumenko.rickandmorty.data.dto.api.ApiLocations
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -16,7 +18,15 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun apiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+    fun provideApiCharacters(retrofit: Retrofit): ApiCharacters = retrofit.create(ApiCharacters::class.java)
+
+    @Provides
+    @Singleton
+    fun provideApiEpisodes(retrofit: Retrofit): ApiEpisodes = retrofit.create(ApiEpisodes::class.java)
+
+    @Provides
+    @Singleton
+    fun provideApiLocations(retrofit: Retrofit): ApiLocations = retrofit.create(ApiLocations::class.java)
 
     @Singleton
     @Provides

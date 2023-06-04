@@ -4,7 +4,7 @@ import app.cash.turbine.test
 import com.naumenko.rickandmorty.base.StateSingle
 import com.naumenko.rickandmorty.domain.models.characters.LocationCharacter
 import com.naumenko.rickandmorty.domain.models.characters.OriginCharacter
-import com.naumenko.rickandmorty.presentation.characters.details.CharactersDetailsViewModel
+import com.naumenko.rickandmorty.presentation.characters.viewmodels.CharactersDetailsViewModel
 import com.naumenko.rickandmorty.presentation.characters.models.SingleCharacterListItem
 import com.naumenko.rickandmorty.presentation.episodes.models.SingleEpisodeListItem
 import com.naumenko.rickandmorty.presentation.mappers.toSingleCharacterListItem
@@ -16,20 +16,21 @@ import org.junit.Test
 
 class CharactersDetailsViewModelTest : ViewModelTest() {
 
-    private val repository = TestRickMortyRepository()
+    private val repositoryCharacters= TestCharactersRepository()
+    private val repositoryEpisodes = TestEpisodesRepository()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `when onFragmentCharactersDetailsCreated, state loading, repository emit emptyList and then state error `() =
         runTest {
-            val viewModel = CharactersDetailsViewModel(repository)
+            val viewModel = CharactersDetailsViewModel(repositoryCharacters,repositoryEpisodes)
             val message = "No Internet Connection."
 
             viewModel.state.test {
                 val firstItem = awaitItem()
                 Assert.assertEquals(StateSingle.Loading, firstItem)
 
-                repository.sendCharacters(emptyList())
+                repositoryCharacters.sendCharacters(emptyList())
                 viewModel.onFragmentCharactersDetailsCreated(1)
                 val secondItem = awaitItem()
                 assert(secondItem is StateSingle.Error)
@@ -41,7 +42,7 @@ class CharactersDetailsViewModelTest : ViewModelTest() {
     @Test
     fun `when onFragmentCharactersDetailsCreated, state loading, repository emit list and then state success  `() =
         runTest {
-            val viewModel = CharactersDetailsViewModel(repository)
+            val viewModel = CharactersDetailsViewModel(repositoryCharacters,repositoryEpisodes)
             val characters = listOf(
                 createSingleCharacters(
                     id = 1,
@@ -74,8 +75,8 @@ class CharactersDetailsViewModelTest : ViewModelTest() {
                 val firstItem = awaitItem()
                 Assert.assertEquals(StateSingle.Loading, firstItem)
 
-                repository.sendCharacters(characters)
-                repository.sendEpisodes(episodes)
+                repositoryCharacters.sendCharacters(characters)
+                repositoryEpisodes.sendEpisodes(episodes)
                 viewModel.onFragmentCharactersDetailsCreated(1)
 
                 val secondItem = awaitItem()
